@@ -252,6 +252,10 @@ span.anticon.anticon-instagram {
   color: white;
 }
 
+.socialMedia > a {
+  color: white;
+}
+
 .StatisticsP {
   color: #1890ff;
   cursor: pointer;
