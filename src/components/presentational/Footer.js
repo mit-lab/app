@@ -12,9 +12,9 @@ function Main() {
         <Link href="mailto:support@somename.ru" target="_blank" className="FooterA" >support@somename.ru</Link><br />
         <div className='FooterLine'></div>
         <div className="socialMedia">
-          <Link href="https://twitter.com" target="_blank"><TwitterCircleFilled /></Link>
-          <Link href="https://www.facebook.com" target="_blank"><FacebookFilled /></Link>
-          <Link href="https://www.instagram.com" target="_blank"><InstagramFilled /></Link>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><TwitterCircleFilled /></a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FacebookFilled /></a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><InstagramFilled /></a>
       </div>
       </div>
     </footer>
