@@ -51,58 +51,65 @@ const columnsStatistics = [
   },
 ]
 
+
 const dataStatistics = [
   {
     key: '1',
     date: '2020/01',
     numberMessge: 32,
-    numberSms: 43,
+    numberSms: 3,
   },
   {
     key: '2',
     date: '2020/02',
     numberMessge: 42,
-    numberSms: 43,
+    numberSms: 72,
   },
   {
     key: '3',
     date: '2020/03',
     numberMessge: 32,
-    numberSms: 43,
+    numberSms: 22,
   },
   {
     key: '4',
     date: '2020/04',
     numberMessge: 18,
-    numberSms: 6,
+    numberSms: 88,
   },
   {
     key: '5',
     date: '2020/05',
     numberMessge: 15,
-    numberSms: 8,
+    numberSms: 15,
   },
   {
     key: '5',
     date: '2020/06',
-    numberMessge: 12,
-    numberSms: 9,
+    numberMessge: 13,
+    numberSms: 1,
   },
   {
     key: '7',
     date: '2020/07',
     numberMessge: 9,
-    numberSms: 18,
+    numberSms: 9,
   }
 ]
 
+// data conversion for chart
+let keyDate = dataStatistics.map((item) => item.date);
+let keyNumberMessge = dataStatistics.map((item) => item.numberMessge);
+let keyNumberSms = dataStatistics.map((item) => item.numberSms);
+
+
 // chart
 const chartData = {
-  labels: ['2020/01', '2020/02', '2020/03','2020/04', '2020/05', '2020/06', '2020/07'],
+  labels: keyDate,
   datasets: [
     {
       label: 'Количество сообщений',
-      data: [ 32, 42, 32, 18,  15,  13, 9 ], 
+      data: keyNumberMessge, 
       backgroundColor: [
         'rgba(255, 77, 79, 0.7)',                
       ],
@@ -111,7 +118,7 @@ const chartData = {
     }, 
     {
       label: 'Количество смс',
-      data: [ 3, 72, 22, 88,  15,  1, 9 ], 
+      data: keyNumberSms, 
       backgroundColor: [
         'rgba(24, 144, 255, 0.7)',      
       ],
@@ -122,6 +129,6 @@ const chartData = {
 }
 
 
-export {columnsStatistics, dataStatistics, chartData, columnsMessage, dataMessage};
+export { columnsStatistics, dataStatistics, chartData, columnsMessage, dataMessage };
 
 
