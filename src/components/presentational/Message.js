@@ -3,7 +3,7 @@ import { Button, Table } from 'antd';
 import { DatePicker } from 'antd';
 import moment from 'moment';
 import '../../App.css';
-import {columnsMessage, dataMessage} from '../data'
+
 
 const dateFormat = 'YYYY/MM/DD';
 const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
@@ -33,7 +33,7 @@ function  Message(props) {
       {!props.isHiddenMessage&&
         <div>
           <h2>Cообщения</h2>
-          <Table columns={columnsMessage} dataSource={dataMessage} size="middle" />
+          <Table columns={props.columnsMessage} dataSource={props.dataMessage} size="middle" />
         </div>
       }
     </>

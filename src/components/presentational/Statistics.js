@@ -4,7 +4,6 @@ import { DatePicker, Radio, Table} from 'antd';
 import moment from 'moment';
 import '../../App.css';
 import Chart from './Сhart';
-import {columnsStatistics, dataStatistics} from '../data'
 
 
 const dateFormat = 'YYYY/MM/DD';
@@ -46,7 +45,7 @@ function Statistics(props) {
       {!props.isHiddenstatistics&&
         <div>
           <h2>Статистика</h2>
-          <Table columns={columnsStatistics} dataSource={dataStatistics} size="middle" />
+          <Table columns={props.columnsStatistics} dataSource={props.dataStatistics} size="middle" />
           <div className="buttonStatistics">
           <Button danger  onClick={props.showChart}>{props.nameButtoon ? 'Закрыть график': 'Смотреть графики'}</Button>
           </div>

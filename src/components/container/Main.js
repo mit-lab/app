@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import '../../App.css';
+import { dataStatistics, columnsStatistics, dataMessage, columnsMessage, chartData } from '../data'
+
 
 // components
 import Footer from '../presentational/Footer';
@@ -17,7 +19,12 @@ class Main extends  Component {
       isHiddenstatistics: true, 
       isHiddenChart: false, 
       nameButtoon: null,
-      current: 'message'
+      current: 'message', 
+      valueDataStatistics: '', 
+      valueColumnStatistics: '', 
+      dataMessage: '',
+      columnsMessage: '', 
+      chartData: ''
     };
     this.showStatistics = this.showStatistics.bind(this);
     this.showMessage = this.showMessage.bind(this);
@@ -27,6 +34,16 @@ class Main extends  Component {
     this.showChart = this.showChart.bind(this);
   }
 
+
+  componentDidMount() {
+    this.setState({
+      dataStatistics: dataStatistics,
+      columnsStatistics: columnsStatistics,
+      dataMessage: dataMessage, 
+      columnsMessage: columnsMessage, 
+      chartData: chartData
+    })
+  }
 
   changeMenu(e) {
     this.setState({ current: e.key});
@@ -71,6 +88,8 @@ class Main extends  Component {
             <Message
               showMessageDetails={this.showMessageDetails}
               isHiddenMessage={this.state.isHiddenMessage}
+              dataMessage={this.state.dataMessage}
+              columnsMessage={this.state.columnsMessage}
              />
           }
           {!this.state.isHidden&&
@@ -81,6 +100,8 @@ class Main extends  Component {
               isHiddenChart={this.state.isHiddenChart}
               chartData={this.state.chartData}
               nameButtoon={this.state.nameButtoon}
+              dataStatistics={this.state.dataStatistics}
+              columnsStatistics={this.state.columnsStatistics}
             />
           }
         </main>
